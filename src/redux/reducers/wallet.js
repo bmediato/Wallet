@@ -21,7 +21,7 @@ const wallet = (state = initialState, action) => {
       currencies: action.payload };
   case 'SAVE_INFO':
     return { ...state,
-      expenses: action.payload };
+      expenses: [...state.expenses, ...action.payload] };
   default:
     return state;
   }
