@@ -14,7 +14,7 @@ const wallet = (state = initialState, action) => {
     };
   case 'RESPONSE_WALLET_SUCCESS':
     return { ...state,
-      currencies: action.payload,
+      currencies: Object.keys(action.payload),
     };
   case 'RESPONSE_WALLET_ERROR':
     return { ...state,

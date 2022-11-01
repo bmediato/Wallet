@@ -11,6 +11,7 @@ class WalletForm extends Component {
 
   render() {
     const { currencies } = this.props;
+    console.log(currencies);
     return (
       <form>
         <label htmlFor="valueInput">
@@ -36,14 +37,16 @@ class WalletForm extends Component {
             {currencies.map((el) => <option key={ el } value={ el }>{el}</option>)}
           </select>
         </label>
+
         <label htmlFor="payment">
           Método de pagamento
           <select data-testid="method-input" id="payment">
-            <option value="Dinheiro">Dinheiro</option>
-            <option value="Cartão de crédito">Cartão de Crédito</option>
-            <option value="Cartão de debito">Cartão de Debito</option>
+            <option value="dinheiro">Dinheiro</option>
+            <option value="cartaocredito">Cartão de crédito</option>
+            <option value="cartaodebito">Cartão de débito</option>
           </select>
         </label>
+
         <label htmlFor="expense">
           <select data-testid="tag-input" id="expense">
             <option value="alimentação">Alimentação</option>

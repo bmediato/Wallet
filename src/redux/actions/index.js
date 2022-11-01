@@ -31,6 +31,6 @@ export const fetchWallet = () => async (dispatch) => {
     delete response.USDT;
     dispatch(responseSuccess(response));
   } catch (error) {
-    dispatch(responseError(error));
+    dispatch(responseError(error.message));
   }
 };
