@@ -19,7 +19,7 @@ class Header extends Component {
       <header>
         <p data-testid="email-field">{ email }</p>
         <p data-testid="total-field">
-          {this.value()}
+          { this.value() }
         </p>
         <p data-testid="header-currency-field"> BRL</p>
       </header>
@@ -27,13 +27,13 @@ class Header extends Component {
   }
 }
 
+Header.propTypes = {
+  email: PropTypes.string.isRequired,
+  expenses: PropTypes.arrayOf(Object).isRequired,
+};
+
 const mapStateToProps = (state) => ({
   email: state.user.email,
   expenses: state.wallet.expenses,
 });
-
-Header.propTypes = {
-  email: PropTypes.string.isRequired,
-  expenses: PropTypes.arrayOf.isRequired,
-};
 export default connect(mapStateToProps)(Header);

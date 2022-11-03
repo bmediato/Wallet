@@ -8,11 +8,11 @@ class WalletForm extends Component {
     super();
 
     this.state = {
-      value: 0,
+      value: '',
       description: '',
       currency: 'USD',
       method: 'Dinheiro',
-      tag: 'alimentação',
+      tag: 'Alimentação',
     };
   }
 
@@ -22,19 +22,20 @@ class WalletForm extends Component {
   }
 
   OnInputChange = ({ target }) => {
-    const { name, value } = target;
+    const { name, type, checked } = target;
+    const value = type === 'checkbox' ? checked : target.value;
     this.setState({ [name]: value });
   };
 
   BtnChange = () => {
     const { dispatch } = this.props;
     dispatch(expensesFetch(this.state));
-    this.setState = ({
-      value: 0,
+    this.setState({
+      value: '',
       description: '',
       currency: 'USD',
       method: 'Dinheiro',
-      tag: 'alimentação',
+      tag: 'Alimentação',
     });
   };
 
@@ -77,8 +78,6 @@ class WalletForm extends Component {
             {currencies.map((el) => (
               <option
                 key={ el }
-                name="currency"
-                value={ el }
               >
                 {el}
               </option>
@@ -95,9 +94,9 @@ class WalletForm extends Component {
             value={ method }
             onChange={ OnInputChange }
           >
-            <option name="method" value="dinheiro">Dinheiro</option>
-            <option name="method" value="cartaocredito">Cartão de crédito</option>
-            <option name="method" value="cartaodebito">Cartão de débito</option>
+            <option value="Dinheiro">Dinheiro</option>
+            <option value="Cartão de crédito">Cartão de crédito</option>
+            <option value="Cartão de débito">Cartão de débito</option>
           </select>
         </label>
 
@@ -109,11 +108,11 @@ class WalletForm extends Component {
             value={ tag }
             onChange={ OnInputChange }
           >
-            <option name="tag" value="alimentação">Alimentação</option>
-            <option name="tag" value="lazer">Lazer</option>
-            <option name="tag" value="trabalho">Trabalho</option>
-            <option name="tag" value="transporte">Transporte</option>
-            <option name="tag" value="saude">Saúde</option>
+            <option value="Alimentação">Alimentação</option>
+            <option value="Lazer">Lazer</option>
+            <option value="Trabalho">Trabalho</option>
+            <option value="Transporte">Transporte</option>
+            <option value="Saúde">Saúde</option>
           </select>
         </label>
         <button

@@ -21,8 +21,10 @@ const wallet = (state = initialState, action) => {
       currencies: action.payload };
   case 'RESPONSE_EXPENSE_SUCCESS':
     return { ...state,
-      expenses: [...state.expenses, action.payload],
-      idToEdit: state.idToEdit + 1 };
+      expenses: [...state.expenses,
+        action.payload],
+      idToEdit: state.idToEdit + 1,
+    };
 
   default:
     return state;
