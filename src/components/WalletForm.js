@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { fetchWallet, globalFetch } from '../redux/actions/index';
+import { fetchWallet, expensesFetch } from '../redux/actions/index';
 
 class WalletForm extends Component {
   constructor() {
     super();
 
     this.state = {
-      // id: 0,
       value: 0,
       description: '',
       currency: 'USD',
       method: 'Dinheiro',
       tag: 'alimentação',
-      // exchangeRates: {},
     };
   }
 
@@ -28,16 +26,22 @@ class WalletForm extends Component {
     this.setState({ [name]: value });
   };
 
-  BtnClick = () => {
+  BtnChange = () => {
     const { dispatch } = this.props;
-    const { currency } = this.state;
-    dispatch(globalFetch(currency));
+    dispatch(expensesFetch(this.state));
+    this.setState = ({
+      value: 0,
+      description: '',
+      currency: 'USD',
+      method: 'Dinheiro',
+      tag: 'alimentação',
+    });
   };
 
   render() {
     const { currencies } = this.props;
     const { value, description, currency, method, tag } = this.state;
-    const { BtnClick, OnInputChange } = this;
+    const { OnInputChange } = this;
     return (
       <form>
         <label htmlFor="valueInput">
@@ -46,6 +50,7 @@ class WalletForm extends Component {
             data-testid="value-input"
             id="valueInput"
             name="value"
+            type="number"
             value={ value }
             onChange={ OnInputChange }
           />
@@ -113,7 +118,7 @@ class WalletForm extends Component {
         </label>
         <button
           type="button"
-          onClick={ BtnClick }
+          onClick={ this.BtnChange }
         >
           Adicionar despesa
         </button>

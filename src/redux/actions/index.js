@@ -1,17 +1,16 @@
+import getCoins from '../../helpe/ApiCoins';
+
 const SEND_EMAIL = 'SEND_EMAIL';
 const REQUEST_WALLET = 'REQUEST_WALLET';
 const RESPONSE_WALLET_SUCCESS = 'RESPONSE_WALLET_SUCCESS';
 const RESPONSE_WALLET_ERROR = 'RESPONSE_WALLET_ERROR';
-const SAVE_INFO = 'SAVE_INFO';
+const RESPONSE_EXPENSE = 'RESPONSE_EXPENSE';
+const RESPONSE_EXPENSE_SUCCESS = 'RESPONSE_EXPENSE_SUCCESS';
+const RESPONSE_EXPENSE_ERROR = 'RESPONSE_EXPENSE_ERROR';
 
 export const userAction = (user) => ({
   type: SEND_EMAIL,
   payload: user,
-});
-
-export const saveInfoGlobal = (info) => ({
-  type: SAVE_INFO,
-  payload: info,
 });
 
 export const requestWallet = () => ({
@@ -41,12 +40,33 @@ export const fetchWallet = () => async (dispatch) => {
   }
 };
 
-export const globalFetch = (endpoint) => async (dispatch) => {
+export const responseExpenses = () => ({
+  type: RESPONSE_EXPENSE,
+});
+
+export const responseExpensesSuccess = (expenses) => ({
+  type: RESPONSE_EXPENSE_SUCCESS,
+  payload: expenses,
+});
+
+export const responseExpensesError = (error) => ({
+  type: RESPONSE_EXPENSE_ERROR,
+  payload: error,
+});
+
+export const expensesFetch = (expenses) => async (dispatch, getState) => {
   try {
-    const request = await fetch(`https://economia.awesomeapi.com.br/json/${endpoint}`);
-    const response = await request.json();
-    dispatch(saveInfoGlobal(response));
-  } catch (e) {
-    throw new Error(e);
+    const { wallet: { idToEdit } } = getState();
+    dispatch(responseExpenses());
+    const response = await getCoins();
+    delete response.USDT;
+    const newExpenses = {
+      id: idToEdit,
+      ...expenses,
+      exchangeRates: response,
+    };
+    dispatch(responseExpensesSuccess(newExpenses));
+  } catch (error) {
+    dispatch(responseExpensesError(error.message));
   }
 };
