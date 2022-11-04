@@ -18,6 +18,11 @@ export const requestWallet = () => ({
   type: REQUEST_WALLET,
 });
 
+export const deleteItem = (elemento) => ({
+  type: DELETE_ITEM,
+  payload: elemento,
+});
+
 export const responseSuccess = (coins) => ({
   type: RESPONSE_WALLET_SUCCESS,
   payload: coins,
@@ -71,8 +76,3 @@ export const expensesFetch = (expenses) => async (dispatch, getState) => {
     dispatch(responseExpensesError(error.message));
   }
 };
-
-export const deleteItem = (id) => ({
-  type: DELETE_ITEM,
-  payload: id,
-});

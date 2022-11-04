@@ -27,8 +27,7 @@ const wallet = (state = initialState, action) => {
     };
   case 'DELETE_ITEM':
     return { ...state,
-      expenses: action.payload,
-    };
+      expenses: action.payload };
 
   default:
     return state;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { deleteItem } from '../redux/actions';
 
 class Table extends Component {
@@ -27,8 +28,8 @@ class Table extends Component {
           </tr>
         </thead>
         <tbody>
-          {expenses.map((element, i) => (
-            <tr key={ i }>
+          {expenses.map((element) => (
+            <tr key={ element.id }>
               <td>
                 {element.description}
               </td>
@@ -66,7 +67,10 @@ class Table extends Component {
   }
 }
 
-Table.propTypes = {}.isRequired;
+Table.propTypes = {
+  expenses: PropTypes.arrayOf(Object).isRequired,
+  dispatch: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = (state) => ({
   expenses: state.wallet.expenses,
