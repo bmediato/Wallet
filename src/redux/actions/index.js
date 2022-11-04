@@ -7,6 +7,7 @@ const RESPONSE_WALLET_ERROR = 'RESPONSE_WALLET_ERROR';
 const RESPONSE_EXPENSE = 'RESPONSE_EXPENSE';
 const RESPONSE_EXPENSE_SUCCESS = 'RESPONSE_EXPENSE_SUCCESS';
 const RESPONSE_EXPENSE_ERROR = 'RESPONSE_EXPENSE_ERROR';
+const DELETE_ITEM = 'DELETE_ITEM';
 
 export const userAction = (user) => ({
   type: SEND_EMAIL,
@@ -70,3 +71,8 @@ export const expensesFetch = (expenses) => async (dispatch, getState) => {
     dispatch(responseExpensesError(error.message));
   }
 };
+
+export const deleteItem = (id) => ({
+  type: DELETE_ITEM,
+  payload: id,
+});

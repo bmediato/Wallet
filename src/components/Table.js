@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { deleteItem } from '../redux/actions';
 
 class Table extends Component {
+  btnDelete = (event) => {
+    const { dispatch } = this.props;
+    const { target } = event;
+    console.log(target);
+    dispatch(deleteItem(target.id));
+  };
+
   render() {
     const { expenses } = this.props;
     return (
@@ -33,6 +41,23 @@ class Table extends Component {
               <td>
                 {Number(element.value * element.exchangeRates[element.currency].ask)
                   .toFixed(2)}
+              </td>
+              <td>Real</td>
+              <td>
+                <button
+                  data-testid="edit-btn"
+                  type="button"
+                >
+                  Editar
+                </button>
+                <button
+                  data-testid="delete-btn"
+                  type="button"
+                  value={ element.id }
+                  onClick={ this.btnDelete }
+                >
+                  Excluir
+                </button>
               </td>
             </tr>
           ))}

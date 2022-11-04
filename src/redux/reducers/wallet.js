@@ -25,6 +25,10 @@ const wallet = (state = initialState, action) => {
         action.payload],
       idToEdit: state.idToEdit + 1,
     };
+  case 'DELETE_ITEM':
+    return { ...state,
+      expenses: [state.expenses.filter((element) => element.id !== action.payload)],
+    };
 
   default:
     return state;
