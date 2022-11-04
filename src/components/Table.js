@@ -3,11 +3,10 @@ import { connect } from 'react-redux';
 import { deleteItem } from '../redux/actions';
 
 class Table extends Component {
-  btnDelete = (event) => {
-    const { dispatch } = this.props;
-    const { target } = event;
-    console.log(target);
-    dispatch(deleteItem(target.id));
+  btnDelete = (element) => {
+    const { dispatch, expenses } = this.props;
+    const filterId = expenses.filter((elemento) => elemento.id !== element.id);
+    dispatch(deleteItem(filterId));
   };
 
   render() {
@@ -53,8 +52,7 @@ class Table extends Component {
                 <button
                   data-testid="delete-btn"
                   type="button"
-                  value={ element.id }
-                  onClick={ this.btnDelete }
+                  onClick={ () => this.btnDelete(element) }
                 >
                   Excluir
                 </button>

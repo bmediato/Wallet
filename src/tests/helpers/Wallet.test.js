@@ -1,5 +1,5 @@
 import React from 'react';
-import { screen } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from '../../App';
 import { renderWithRouterAndRedux } from './renderWith';
@@ -27,7 +27,7 @@ describe('Testa página Wallet', () => {
     expect(emailPerson).toBeInTheDocument();
     expect(emailPerson).toHaveTextContent(email);
   });
-  test('testa se a aplicação tem a quantidade de itens adicionados na tela', () => {
+  test('testa se a aplicação tem a quantidade de itens adicionados na tela', async () => {
     renderWithRouterAndRedux(<Wallet />);
     const inputValue = screen.getByTestId('value-input');
     const inputDescription = screen.getByTestId('description-input');
@@ -39,10 +39,11 @@ describe('Testa página Wallet', () => {
     userEvent.type(inputValue, '10');
     expect(inputValue).toBeInTheDocument();
     userEvent.type(inputDescription, 'mercado');
-    expect(inputDescription).toBeInTheDocument();
-    expect(inputCoin).toBeInTheDocument();
-    expect(inputPayment).toBeInTheDocument();
-    expect(inputType).toBeInTheDocument();
-    expect(btnAdd).toBeInTheDocument();
+    await waitFor(() => {
+      userEvent.selectOptions(inputCoin, 'USD');
+      userEvent.selectOptions(inputPayment, 'Dinheiro');
+      userEvent.selectOptions(inputType, 'Alimentação');
+      expect(btnAdd).toBeVisible();
+    });
   });
 });
