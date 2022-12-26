@@ -44,83 +44,96 @@ class WalletForm extends Component {
     const { value, description, currency, method, tag } = this.state;
     const { OnInputChange } = this;
     return (
-      <form>
-        <label htmlFor="valueInput">
-          Valor
-          <input
-            data-testid="value-input"
-            id="valueInput"
-            name="value"
-            type="number"
-            value={ value }
-            onChange={ OnInputChange }
-          />
-        </label>
-        <label htmlFor="description">
-          Descrição
-          <input
-            data-testid="description-input"
-            id="description"
-            name="description"
-            value={ description }
-            onChange={ OnInputChange }
-          />
-        </label>
-        <label htmlFor="coin">
-          Moeda
-          <select
-            data-testid="currency-input"
-            id="coin"
-            name="currency"
-            value={ currency }
-            onChange={ OnInputChange }
-          >
-            {currencies.map((el) => (
-              <option
-                key={ el }
-              >
-                {el}
-              </option>
-            ))}
-          </select>
-        </label>
+      <form className="form-container">
+        <div className="input-container">
+          <label htmlFor="description">
+            Descrição
+            {' '}
+            <input
+              data-testid="description-input"
+              className="input-desc"
+              id="description"
+              name="description"
+              value={ description }
+              onChange={ OnInputChange }
+            />
+          </label>
+          <label htmlFor="valueInput">
+            Valor
+            {' '}
+            <input
+              data-testid="value-input"
+              className="input-value"
+              id="valueInput"
+              name="value"
+              type="number"
+              value={ value }
+              onChange={ OnInputChange }
+            />
+          </label>
+          <label htmlFor="coin">
+            Moeda
+            {' '}
+            <select
+              data-testid="currency-input"
+              id="coin"
+              name="currency"
+              value={ currency }
+              onChange={ OnInputChange }
+            >
+              {currencies.map((el) => (
+                <option
+                  key={ el }
+                >
+                  {el}
+                </option>
+              ))}
+            </select>
+          </label>
 
-        <label htmlFor="payment">
-          Método de pagamento
-          <select
-            data-testid="method-input"
-            id="payment"
-            name="method"
-            value={ method }
-            onChange={ OnInputChange }
-          >
-            <option value="Dinheiro">Dinheiro</option>
-            <option value="Cartão de crédito">Cartão de crédito</option>
-            <option value="Cartão de débito">Cartão de débito</option>
-          </select>
-        </label>
+          <label htmlFor="payment">
+            Método de pagamento
+            {' '}
+            <select
+              data-testid="method-input"
+              id="payment"
+              name="method"
+              value={ method }
+              onChange={ OnInputChange }
+            >
+              <option value="Dinheiro">Dinheiro</option>
+              <option value="Cartão de crédito">Cartão de crédito</option>
+              <option value="Cartão de débito">Cartão de débito</option>
+            </select>
+          </label>
 
-        <label htmlFor="expense">
-          <select
-            data-testid="tag-input"
-            id="expense"
-            name="tag"
-            value={ tag }
-            onChange={ OnInputChange }
+          <label htmlFor="expense">
+            Categoria de Despesa
+            {' '}
+            <select
+              data-testid="tag-input"
+              id="expense"
+              name="tag"
+              value={ tag }
+              onChange={ OnInputChange }
+            >
+              <option value="Alimentação">Alimentação</option>
+              <option value="Lazer">Lazer</option>
+              <option value="Trabalho">Trabalho</option>
+              <option value="Transporte">Transporte</option>
+              <option value="Saúde">Saúde</option>
+            </select>
+          </label>
+        </div>
+        <div className="btn-container">
+          <button
+            className="btn-add"
+            type="button"
+            onClick={ this.BtnChange }
           >
-            <option value="Alimentação">Alimentação</option>
-            <option value="Lazer">Lazer</option>
-            <option value="Trabalho">Trabalho</option>
-            <option value="Transporte">Transporte</option>
-            <option value="Saúde">Saúde</option>
-          </select>
-        </label>
-        <button
-          type="button"
-          onClick={ this.BtnChange }
-        >
-          Adicionar despesa
-        </button>
+            Adicionar despesa
+          </button>
+        </div>
       </form>
     );
   }

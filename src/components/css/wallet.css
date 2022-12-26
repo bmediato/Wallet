@@ -1,0 +1,343 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container-wallet {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 908px;
+  margin: 0;
+  width: 1919px;
+}
+
+.header-form {
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  box-shadow: -4px 9px 13px rgba(5, 18, 54, 0.4);
+  display: flex;
+  flex-direction: column;
+  height: 482px;
+  justify-content: center;
+  left: 445px;
+  position: absolute;
+  top: -100px;
+  width: 1037px;
+}
+
+.header-container {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.input-container {
+  align-items: center;
+  background: rgba(225, 229, 235, 0.49);
+  display: flex;
+  flex-wrap: wrap;
+  height: 134px;
+  justify-content: space-evenly;
+  left: 121px;
+  top: 156px;
+  width: 1037px;
+}
+
+.btn-add {
+  align-items: center;
+  background: #4bbdac;
+  border: 1px solid #4bbdac;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: white;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  height: 40px;
+  line-height: 14px;
+  text-align: center;
+  width: 330px;
+
+}
+
+.input-desc {
+  border: 1px solid #0e8a77;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 30px;
+  left: 403.14px;
+  top: 179px;
+  width: 288.86px;
+}
+
+.input-value {
+  border: 1px solid #0e8a77;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 30px;
+  left: 403.14px;
+  top: 179px;
+  width: 200px;
+}
+
+label {
+  color: #0e8a77;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+select {
+  background-color: rgba(225, 229, 235, 0.49);
+  border: 1px solid #0e8a77;
+  border-radius: 5px;
+  color: #0e8a77;
+  height: 30px;
+  left: 897px;
+  top: 179px;
+  width: 155px;
+}
+
+.title , .email , .field , .currency {
+  color: #0e8a77;
+}
+
+.table-container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+
+.table {
+  background: #0e8a77;
+  border-radius: 10px;
+  box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
+  display: flex;
+  flex-flow: column wrap;
+  flex-direction: column;
+  height: 464px;
+  left: 63px;
+  width: 1155px;
+}
+
+.thead-container {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: row;
+  height: 60%;
+  justify-content: center;
+  width: 100%;
+}
+
+.tbody-container {
+  align-items: flex;
+  border-radius: 1px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 2%;
+  margin-right: 40%;
+  width: 100%;
+}
+
+th {
+  border-radius: 1px;
+  color: white;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  height: 53.2px;
+  left: 353.35px;
+  line-height: 13px;
+  top: 421px;
+  width: 110.93px;
+}
+
+.tag , .method , .value , .coin , .cambio , .convertedValue , .convertedCoin {
+  border-left: 1px solid white;
+  border-radius: 1px;
+  color: white;
+}
+
+.edit-delete {
+  border-left: 1px solid white;
+  border-radius: 1px;
+  color: white;
+}
+
+.tr {
+  border-radius: 1px;
+  border-top: 1px solid white;
+  display: flex;
+  height: 40.92px;
+  justify-content: space-around;
+  justify-items: space-around;
+  left: 122px;
+  top: 509px;
+  width: 90%;
+}
+
+.element-method , .element-value , .element-coin , .element-converted , .element-real {
+  padding-right: 15px;
+}
+
+.element-description {
+  align-items: center;
+  color: white;
+  display: flex;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  height: 26.6px;
+  left: 124.31px;
+  text-align: center;
+  top: 517.17px;
+  width: 110.93px;
+}
+
+.element-tag {
+  align-items: center;
+  color: white;
+  display: flex;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  height: 26.6px;
+  left: 239.87px;
+  line-height: 13px;
+  text-align: center;
+  top: 517.17px;
+  width: 110.93px;
+}
+
+
+.element-method {
+  align-items: center;
+  color: white;
+  display: flex;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  height: 26.6px;
+  left: 239.87px;
+  line-height: 13px;
+  text-align: center;
+  top: 517.17px;
+  width: 110.93px;
+}
+
+.element-value {
+  align-items: center;
+  color: white;
+  display: flex;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  height: 26.6px;
+  left: 239.87px;
+  line-height: 13px;
+  text-align: center;
+  top: 517.17px;
+  width: 110.93px;
+}
+
+.element-name {
+  align-items: center;
+  color: white;
+  display: flex;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  height: 26.6px;
+  left: 239.87px;
+  line-height: 13px;
+  padding-right: 15px;
+  text-align: center;
+  top: 600px;
+  width: 110.93px;
+}
+
+.element-coin {
+  align-items: center;
+  color: white;
+  display: flex;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  height: 26.6px;
+  left: 239.87px;
+  line-height: 13px;
+  text-align: center;
+  top: 517.17px;
+  width: 110.93px;
+}
+
+.element-converted {
+  align-items: center;
+  color: white;
+  display: flex;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  height: 26.6px;
+  left: 239.87px;
+  line-height: 13px;
+  text-align: center;
+  top: 517.17px;
+  width: 110.93px;
+}
+
+.element-real {
+  align-items: center;
+  color: white;
+  display: flex;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  height: 26.6px;
+  left: 239.87px;
+  line-height: 13px;
+  text-align: center;
+  top: 517.17px;
+  width: 110.93px;
+}
+
+.buttons {
+  align-items: center;
+  color: white;
+  display: flex;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  height: 26.6px;
+  left: 239.87px;
+  line-height: 13px;
+  text-align: center;
+  top: 517.17px;
+  width: 110.93px;
+}
+
+.btn-edit , .btn-delete {
+  align-items: center;
+  background: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #4bbdac;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  height: 30px;
+  line-height: 14px;
+  text-align: center;
+  width: 60px;
+}

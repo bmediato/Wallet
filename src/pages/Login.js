@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { userAction } from '../redux/actions';
+import '../components/css/login.css';
 
 class Login extends React.Component {
   constructor() {
@@ -46,34 +47,45 @@ class Login extends React.Component {
     const { disabled, email, password } = this.state;
     const { OnInputChange, Btn } = this;
     return (
-      <div>
-        <h1>Login</h1>
-        <section>
-          <input
-            data-testid="email-input"
-            type="text"
-            placeholder="E-mail"
-            name="email"
-            value={ email }
-            onChange={ OnInputChange }
-          />
-          <input
-            data-testid="password-input"
-            placeholder="Password"
-            type="password"
-            name="password"
-            value={ password }
-            onChange={ OnInputChange }
-          />
-          <button
-            disabled={ disabled }
-            onClick={ Btn }
-            type="button"
-          >
-            Entrar
+      <div className="container">
+        <div className="container-two">
+          <section>
+            <div className="h1">
+              <h1>Trybe Wallet</h1>
+              <hr />
+            </div>
+            <div className="inputs">
 
-          </button>
-        </section>
+              <input
+                className="input-email"
+                data-testid="email-input"
+                type="text"
+                placeholder="E-mail"
+                name="email"
+                value={ email }
+                onChange={ OnInputChange }
+              />
+              <input
+                className="input-password"
+                data-testid="password-input"
+                placeholder="Password"
+                type="password"
+                name="password"
+                value={ password }
+                onChange={ OnInputChange }
+              />
+            </div>
+            <button
+              className="btn"
+              disabled={ disabled }
+              onClick={ Btn }
+              type="button"
+            >
+              Entrar
+
+            </button>
+          </section>
+        </div>
       </div>
     );
   }
