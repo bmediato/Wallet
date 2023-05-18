@@ -1,0 +1,267 @@
+/* table */
+.table-container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 9%;
+  margin: auto;
+  top: 5px;
+  width: 80%;
+}
+
+
+.table {
+  background: #0e8a77;
+  border-collapse: separate;
+  border-radius: 5px;
+  border-spacing: 0 10px;
+  box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
+  height: 464px;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+}
+
+.tbody-container {
+  width: 100%;
+}
+
+.tbody-container td {
+  margin: 10px;
+}
+
+.element-description {
+
+  /* align-items: center;
+  color: white;
+  display: flex;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  height: 26.6px;
+  left: 124.31px;
+  text-align: center;
+  top: 517.17px;
+  width: 110.93px; */
+  background-color: #2fc18c;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.element-tag {
+
+  /* align-items: center;
+  color: white;
+  display: flex;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  height: 26.6px;
+  left: 239.87px;
+  line-height: 13px;
+  text-align: center;
+  top: 517.17px;
+  width: 110.93px; */
+  background-color: #f0f0f0;
+}
+
+
+.element-method {
+
+  /* align-items: center;
+  color: white;
+  display: flex;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  height: 26.6px;
+  left: 239.87px;
+  line-height: 13px;
+  text-align: center;
+  top: 517.17px;
+  width: 110.93px; */
+  background-color: #421981;
+  color: white;
+}
+
+.element-value {
+  color: white;
+  background-color: #2fc18c;
+  /* align-items: center;
+  display: flex;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  height: 26.6px;
+  left: 239.87px;
+  line-height: 13px;
+  text-align: center;
+  top: 517.17px;
+  width: 110.93px; */
+}
+
+.element-name {
+  background-color: #f0f0f0;
+
+  /* align-items: center;
+  display: flex;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  height: 26.6px;
+  left: 239.87px;
+  line-height: 13px;
+  padding-right: 15px;
+  text-align: center;
+  top: 600px;
+  width: 110.93px; */
+}
+
+.element-coin {
+  color: white;
+  background-color: #421981;
+  /* align-items: center;
+  display: flex;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  height: 26.6px;
+  left: 239.87px;
+  line-height: 13px;
+  text-align: center;
+  top: 517.17px;
+  width: 110.93px; */
+}
+
+.element-converted {
+  color: white;
+  background-color: #2fc18c;
+  /* align-items: center;
+  display: flex;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  height: 26.6px;
+  left: 239.87px;
+  line-height: 13px;
+  text-align: center;
+  top: 517.17px;
+  width: 110.93px; */
+}
+
+.element-real {
+  background-color: #f0f0f0;
+
+  /* align-items: center;
+  display: flex;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  height: 26.6px;
+  left: 239.87px;
+  line-height: 13px;
+  text-align: center;
+  top: 517.17px;
+  width: 110.93px; */
+}
+
+.btn-edit {
+  background-color: white;
+  border: none;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  color: #056cf9;
+  cursor: pointer;
+  /* height: 100%; */
+  width: 100%;
+}
+
+.btn-delete {
+
+  /* align-items: center;
+  background: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #4bbdac;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  height: 30px;
+  line-height: 14px;
+  text-align: center;
+  width: 60px; */
+  background-color: #056cf9;
+  border: none;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  color: white;
+  cursor: pointer;
+  /* height: 100%; */
+  width: 100%;
+}
+
+.buttons {
+  /* align-items: center;
+  color: white;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  height: 26.6px;
+  left: 239.87px;
+  line-height: 13px;
+  text-align: center;
+  top: 517.17px;
+  display: flex;
+  width: 110.93px; */
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  width: auto;
+}
+
+/*
+
+.thead-container th {
+  border: 1px solid red;
+}
+
+th {
+  border-radius: 1px;
+  color: white;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  height: 53.2px;
+  left: 353.35px;
+  line-height: 13px;
+  top: 421px;
+  width: 110.93px;
+}
+
+.tag , .method , .value , .coin , .cambio , .convertedValue , .convertedCoin {
+  border-left: 1px solid white;
+  border-radius: 1px;
+  color: white;
+}
+
+.edit-delete {
+  border-left: 1px solid white;
+  border-radius: 1px;
+  color: white;
+}
+
+.tr {
+  border-radius: 1px;
+  border-top: 1px solid white;
+  display: flex;
+  height: 40.92px;
+  justify-content: space-around;
+  justify-items: space-around;
+  left: 122px;
+  top: 509px;
+  width: 90%;
+}
+
+
+*/
